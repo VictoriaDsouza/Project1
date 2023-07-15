@@ -1,7 +1,6 @@
 version: 2.1
 
-# Define a job to be invoked later in a workflow.
-# See: https://circleci.com/docs/configuration-reference/#jobs
+
 jobs:
   one:
     docker:
