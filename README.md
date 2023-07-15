@@ -30,3 +30,35 @@ workflows:
       jobs:
         - one
         - two : requries: -one
+
+
+
+
+version: 2
+jobs:
+  one:
+    docker:
+        - image: cimg/ruby:2.6.8
+    steps:
+      - checkout
+      - run: echo "A first hello"
+      - run: sleep 25
+  two:
+    docker:
+        - image: cimg/ruby:2.6.8
+    steps:
+      - checkout
+      - run: echo "A first hello"
+      - run: sleep 15
+workflows:
+    one_and_two:
+      jobs:
+        - one
+        - two 
+      
+
+
+
+
+
+        
